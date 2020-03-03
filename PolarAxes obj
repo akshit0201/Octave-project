@@ -1,0 +1,26 @@
+function h = PolarAxes(varargin)
+  i = nargin(PolarAxes);
+  arr = [];
+  arr = varargin{:};
+  if(i)
+    switch(arr[1])
+      {
+        case "Figure":
+        case "Panel":
+        case "Tab":
+        case "TiledChartLayout":
+        case "ThetaAxisUnits":
+        case "ThetaZeroLocation":
+        case "ThetaDir":
+        case "ThetaLim":
+        case "ThetaTick":
+        case "ThetaColor":
+        case "RAxisLocation":
+        case "RDir":
+        case "RLim":
+        case "RTick":
+        case "RColor":
+        default: error("Incorrect inputs")
+      }
+endfunction
+       
