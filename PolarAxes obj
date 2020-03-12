@@ -2,16 +2,25 @@ function h = PolarAxes(varargin)
   i = nargin(PolarAxes);
   arr = [];
   arr = varargin{:};
-  if(i)
-    switch(arr[1])
+  for j= 1:1:i
+    switch(arr[i])
       {
-        case "Figure":
-        case "Panel":
-        case "Tab":
-        case "TiledChartLayout":
-        case "ThetaAxisUnits":
-        case "ThetaZeroLocation":
-        case "ThetaDir":
+        case "Figure":  Polar(360,1)
+                          break;
+        case "ThetaAxisUnits": if(!strcmpi(arr[i+1],"degrees"))
+                                  settodegree();
+                               elseif(!strcmpi(arr[i+1],"radians"))
+                                  settoradians():
+                                else
+                                  disp("Incorrect arguments")
+                                break;
+        case "ThetaDir":  if(!strcmpi(arr[i+1],"counterclockwise")
+                              ThetaDir = "counterclockwise";
+                          elseif(!strcmpi(arr[i+1],"clockwise")
+                              ThetaDir = "clockwise";
+                          else
+                                 disp("Incorrect arguments")
+                          break;
         case "ThetaLim":
         case "ThetaTick":
         case "ThetaColor":
