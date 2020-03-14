@@ -1,3 +1,10 @@
+classdef PolarAxes
+   properties
+    ThetaAxisUnits
+    ThetaDir
+    
+   end
+   methods
 function h = PolarAxes(varargin)
   i = nargin(PolarAxes);
   arr = [];
@@ -8,28 +15,29 @@ function h = PolarAxes(varargin)
         case "Figure":  Polar(360,1)
                           break;
         case "ThetaAxisUnits": if(!strcmpi(arr[i+1],"degrees"))
-                                  settodegree();
+                                  ThetaAxisUnits = "degrees"
+                               end
                                elseif(!strcmpi(arr[i+1],"radians"))
-                                  settoradians():
+                                ThetaAxisUnits = "radians"
+                               end
                                 else
                                   disp("Incorrect arguments")
+                                 end
                                 break;
         case "ThetaDir":  if(!strcmpi(arr[i+1],"counterclockwise")
                               ThetaDir = "counterclockwise";
+                            end
                           elseif(!strcmpi(arr[i+1],"clockwise")
                               ThetaDir = "clockwise";
+                          end
                           else
                                  disp("Incorrect arguments")
+                          end
                           break;
-        case "ThetaLim":
-        case "ThetaTick":
-        case "ThetaColor":
-        case "RAxisLocation":
-        case "RDir":
-        case "RLim":
-        case "RTick":
-        case "RColor":
+       //The rest of the attributes will be added in a similar manner.
         default: error("Incorrect inputs")
       }
-endfunction
+      end
+    end
+end
        
